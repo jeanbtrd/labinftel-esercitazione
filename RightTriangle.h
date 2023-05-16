@@ -84,6 +84,7 @@ public:
 	float GetHypotenuse();
 	float GetBase();
 	float GetAltitude();
+	void GetCathetes( float & b, float & a );
 	/// @}
 	/// @name Setters
 	/// @{

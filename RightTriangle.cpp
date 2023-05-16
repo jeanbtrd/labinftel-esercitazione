@@ -140,6 +140,14 @@ float RightTriangle::GetAltitude()
 	return altitude;
 }
 
+/// @brief Lets you access base and altitude at the same time
+/// @param Two referenced floats, in which will be put the values of base and altitude respectively.
+void RightTriangle::GetCathetes( float & b, float & a )
+{
+	b = base;
+	a = altitude;
+}
+
 
 // Setters
 
