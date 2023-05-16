@@ -37,10 +37,10 @@ RightTriangle::~RightTriangle()
 /// @name Assignment operator
 /// @param &r reference to the RightTriangle to assign
 /// @return reference to the RightTriangle assigned (for concatenating)
-RightTriangle& RightTriangle::operator=( const RightTriangle & t)
+RightTriangle& RightTriangle::operator=( const RightTriangle & r)
 {
 	Reset();
-	Init(t);
+	Init(r);
 	return *this;
 }
 
