@@ -81,7 +81,6 @@ public:
 	/// @{
 	/// @name Getters
 	/// @{
-	/// Pythagorean theorem
 	float GetHypotenuse();
 	float GetBase();
 	float GetAltitude();
