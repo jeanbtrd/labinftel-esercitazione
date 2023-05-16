@@ -90,6 +90,7 @@ public:
 	/// @{
 	void SetBase(float b);
 	void SetAltitude(float a);
+	void SetCathetes(float b, float a);
 	/// @}
 	/// @}
 

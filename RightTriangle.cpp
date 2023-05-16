@@ -101,12 +101,16 @@ void RightTriangle::Reset()
 ///////////////////////////////////////////////////////////////////////////
 // Interface to parent class.
 
+/// @brief Computes and returns the area of the right triangle.
+/// @return The computed area of the right triangle.
 float RightTriangle::Area()
 {
 	return (float) (base * altitude) / 2;
 }
 
 
+/// @brief Computes and returns the perimeter of the right triangle.
+/// @return The computed perimeter of the right triangle.
 float RightTriangle::Perimeter()
 {
 	return (float) base + altitude + GetHypotenuse();
@@ -155,6 +159,11 @@ void RightTriangle::GetCathetes( float & b, float & a )
 /// @param The float value you want to set the base to.
 void RightTriangle::SetBase(float b)
 {
+	if (b < 0)
+	{
+		ErrorMessage("SetBase:\tBase cannot be a negative float.");
+		return;
+	}
 	base = b;
 }
 
@@ -162,7 +171,23 @@ void RightTriangle::SetBase(float b)
 /// @param The float value you want to set the altitude to.
 void RightTriangle::SetAltitude(float a)
 {
+	if (a < 0)
+	{
+		ErrorMessage("SetAltitude:\tAltitude cannot be a negative float.");
+		return;
+	}
 	altitude = a;
+}
+
+/// @brief Lets you set both base and altitude of the right triangle
+/// @param b float to set the base to
+/// @param a float to set the altitude to
+/// This function calls SetBase and SetAltitude instead than setting them herself.\n
+/// This way, the guards can all be in those functions.
+void RightTriangle::SetCathetes(float b, float a)
+{
+	SetBase(b);
+	SetAltitude(b);
 }
 
 
@@ -183,7 +208,7 @@ void RightTriangle::Draw()
 /// @param string message to be printed.
 void RightTriangle::ErrorMessage( const char *string )
 {
-	cout << endl << "ERROR -- RightTriangle --";
+	cout << endl << "ERROR -- RightTriangle --\t";
 	cout << string << endl;
 }
 
@@ -191,7 +216,7 @@ void RightTriangle::ErrorMessage( const char *string )
 /// @param string message to be printed.
 void RightTriangle::WarningMessage(const char *string)
 {
-	cout << endl << "WARNING -- RightTriangle --";
+	cout << endl << "WARNING -- RightTriangle --\t";
 	cout << string << endl;
 }
 
