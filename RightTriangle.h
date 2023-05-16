@@ -38,7 +38,7 @@ public:
 	RightTriangle(const RightTriangle & r);
 
 	/// Init constructor
-	/// RightTriangle( args );
+	RightTriangle( float b, float a );
 
 	/// Destructor
 	virtual ~RightTriangle();

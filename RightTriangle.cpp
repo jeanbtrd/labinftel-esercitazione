@@ -24,6 +24,11 @@ RightTriangle::RightTriangle( const RightTriangle & t)
 	cout << "END:\tRightTriangle - constructor - copy" << endl;
 }
 
+RightTriangle::RightTriangle( float b, float a )
+{
+	SetCathetes( b , a );
+}
+
 RightTriangle::~RightTriangle()
 {
 	cout << "START:\tRightTriangle - destructor" << endl;
