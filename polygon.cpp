@@ -1,6 +1,6 @@
 #include "polygon.h"
 
-/// @brief default constructor 
+/// @brief default constructor
 Polygon::Polygon() {
 
 	cout << "Polygon - constructor - default" << endl;
@@ -8,12 +8,12 @@ Polygon::Polygon() {
 	area = 0.;
 	perimeter = 0.;
 
-} 
+}
 
-/// @brief copy constructor 
-/// @param r reference to the object that should be copied 
+/// @brief copy constructor
+/// @param r reference to the object that should be copied
 Polygon::Polygon(const Polygon &p) {
-	
+
 	cout << "Polygon - copy constructor" << endl;
 
 	Init(p);
@@ -27,19 +27,19 @@ Polygon::~Polygon() {
 
 }
 
-/// @brief overload of operator = 
-/// @param p reference to the object on the right side of the operator 
-/// @return reference to the object on the left side of the operator 
-Polygon& Polygon::operator=(const Polygon &p) { 
+/// @brief overload of operator =
+/// @param p reference to the object on the right side of the operator
+/// @return reference to the object on the left side of the operator
+Polygon& Polygon::operator=(const Polygon &p) {
 
 	return *this;
-	
+
 }
 
-/// @brief overload of operator == 
-/// @param p reference to the object on the right side of the operator 
-/// @return true if the two objects have the same width and the same length  
-bool Polygon::operator==(const Polygon &r) { 
+/// @brief overload of operator ==
+/// @param p reference to the object on the right side of the operator
+/// @return true if the two objects have the same width and the same length
+bool Polygon::operator==(const Polygon &r) {
 	return false;
 }
 
@@ -52,30 +52,30 @@ void Polygon::Init() {
 }
 
 
-/// @brief initialization of the object as a copy of an object 
-/// @param r reference to the object that should be copied 
+/// @brief initialization of the object as a copy of an object
+/// @param r reference to the object that should be copied
 void Polygon::Init(const Polygon &p) {
 	Reset();
-	
+
 }
 
-/// @brief total reset of the object  
+/// @brief total reset of the object
 void Polygon::Reset() {
 	perimeter = 0.;
 	area = 0.;
 }
 
 /// @brief get the area of the object
-/// @return area 
+/// @return area
 float Polygon::GetArea() {
-	
+
 	area = Area();
 	return area;
 
 }
 
 /// @brief get the perimeter of the object
-/// @return perimeter 
+/// @return perimeter
 float Polygon::GetPerimeter() {
 
 	perimeter = Perimeter();
@@ -83,19 +83,19 @@ float Polygon::GetPerimeter() {
 
 }
 
-/// @brief write an error message 
+/// @brief write an error message
 /// @param string message to be printed
 void Polygon::ErrorMessage(const char *string) {
-	
+
 	cout << endl << "ERROR -- Polygon --";
 	cout << string << endl;
 
 }
 
-/// @brief write a warning message 
+/// @brief write a warning message
 /// @param string message to be printed
 void Polygon::WarningMessage(const char *string) {
-	
+
 	cout << endl << "WARNING -- Polygon --";
 	cout << string << endl;
 
@@ -104,7 +104,7 @@ void Polygon::WarningMessage(const char *string) {
 
 /// @brief for debugging: all about the object
 void Polygon::Dump() {
-	
+
 	cout << endl;
 	cout << "Perimeter = " << GetPerimeter() << endl;
 	cout << "Area = " << GetArea() << endl;
