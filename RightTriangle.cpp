@@ -198,6 +198,8 @@ void RightTriangle::WarningMessage(const char *string)
 /// @brief For debugging: print all about the RightTriangle.
 void RightTriangle::Dump()
 {
+	cout << "START:\tRightTriangle -- Dump" << endl;
 	cout << "Base: " << base << endl;
 	cout << "Altitude: " << altitude << endl;
+	cout << "END:\tRightTriangle -- Dump" << endl;
 }
