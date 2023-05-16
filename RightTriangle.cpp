@@ -45,11 +45,11 @@ RightTriangle& RightTriangle::operator=( const RightTriangle & r)
 }
 
 /// @name Comparison operator
-/// @param &t reference to the object to check for comparison
-/// @return boolean: true if the two objects coincide, false if not
-bool RightTriangle::operator==( const RightTriangle & t)
+/// @param &r reference to the triangle to check for comparison
+/// @return boolean: true if the two right triangles have the same cathetes, false if not.
+bool RightTriangle::operator==( const RightTriangle & r)
 {
-	return false;
+    return (( r.base == base && r.altitude == altitude ) ? true : false);
 }
 
 
