@@ -166,7 +166,7 @@ void RightTriangle::SetBase(float b)
 {
 	if (b < 0)
 	{
-		ErrorMessage("SetBase:\tBase cannot be a negative float.");
+		ErrorMessage(":\tSetBase:\tBase cannot be a negative float.");
 		return;
 	}
 	base = b;
