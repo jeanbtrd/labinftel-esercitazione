@@ -192,7 +192,7 @@ void RightTriangle::SetAltitude(float a)
 void RightTriangle::SetCathetes(float b, float a)
 {
 	SetBase(b);
-	SetAltitude(b);
+	SetAltitude(a);
 }
 
 
