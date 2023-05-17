@@ -234,5 +234,6 @@ void RightTriangle::Dump()
 	cout << "START:\tRightTriangle -- Dump" << endl;
 	cout << "Base: " << base << endl;
 	cout << "Altitude: " << altitude << endl;
+	Polygon::Dump();
 	cout << "END:\tRightTriangle -- Dump" << endl;
 }
