@@ -16,11 +16,13 @@ int main()
 	RightTriangle rt;
 	cout << endl;
 
+
 	// The rt object should have the default values of 0 and 0.
 	cout << "TEST:\t" << " -------------------- ";
 	cout << "Default Constructor" << " -------------------- " << endl;
 	rt.Dump();
 	cout << endl;
+
 
 	// Test SetBase and SetAltitude
 	cout << "TEST:\t" << " -------------------- ";
@@ -53,6 +55,7 @@ int main()
 	cout << rt.GetAltitude() << endl;
 	cout << endl;
 
+
 	// Test GetCathetes
 	cout << "TEST:\t" << " -------------------- ";
 	cout << "GetCathetes" << " -------------------- " << endl;
@@ -60,6 +63,7 @@ int main()
 	rt.GetCathetes( b , a );
 	cout << "B: " << b << "\tA: " << a << endl;
 	cout << endl;
+
 
 	// Test copy constructor
 	cout << "TEST:\t" << " -------------------- ";
@@ -69,6 +73,7 @@ int main()
 	rt2.Dump();
 
 	cout << endl;
+
 
 	// Test comparison operator: should return true
 	cout << "TEST:\t" << " -------------------- ";
@@ -80,12 +85,21 @@ int main()
 
 	cout << endl;
 
+
 	// Test SetCathetes
 	cout << "TEST:\t" << " -------------------- ";
 	cout << "SetCathetes" << " -------------------- " << endl;
 
+	cout << "Bad value (negative):" << endl;
 	rt2.SetCathetes( -35.55, 41.34 );
 	rt2.Dump();
+
+	cout << endl;
+	cout << "Good value:" << endl;
+	rt2.SetCathetes( 35.55, 41.34 );
+	rt2.Dump();
+	cout << endl;
+
 
 	// Test comparison operator: should return false
 	cout << "TEST:\t" << " -------------------- ";
@@ -101,11 +115,11 @@ int main()
 	cout << "Init constructor" << " -------------------- " << endl;
 
 	cout << "Bad value (negative):" << endl;
-	RightTriangle rt3( -78. , 5.54 );
+	RightTriangle rt3( -78. , -57.54 );
 	rt3.Dump();
 
 	cout << "Good value:" << endl;
-	RightTriangle rt4( 78. , 5.54 );
+	RightTriangle rt4( 78. , 57.54 );
 	rt4.Dump();
 
 
