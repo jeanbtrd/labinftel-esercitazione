@@ -109,6 +109,63 @@ int main()
 	rt4.Dump();
 
 
+	// Test GetHypotenuse
+	cout << "TEST:\t" << " -------------------- ";
+	cout << "GetHypotenuse" << " -------------------- " << endl;
+
+	cout << "\nrt:\t"; rt.Dump();
+	cout << "Hypotenuse:\t" << rt.GetHypotenuse() << endl;
+
+	cout << "\nrt2:\t"; rt2.Dump();
+	cout << "Hypotenuse:\t" << rt2.GetHypotenuse() << endl;
+
+	cout << "\nrt3:\t"; rt3.Dump();
+	cout << "Hypotenuse:\t" << rt3.GetHypotenuse() << endl;
+
+	cout << "\nrt4:\t"; rt4.Dump();
+	cout << "Hypotenuse:\t" << rt4.GetHypotenuse() << endl;
+
+	cout << endl;
+
+
+	// Test GetPerimeter
+	cout << "TEST:\t" << " -------------------- ";
+	cout << "GetPerimeter" << " -------------------- " << endl;
+	cout << "NB: function of parent class polygon" << endl;
+
+	cout << "\nrt:\t"; rt.Dump();
+	cout << "Perimeter:\t" << rt.GetPerimeter() << endl;
+
+	cout << "\nrt2:\t"; rt2.Dump();
+	cout << "Perimeter:\t" << rt2.GetPerimeter() << endl;
+
+	cout << "\nrt3:\t"; rt3.Dump();
+	cout << "Perimeter:\t" << rt3.GetPerimeter() << endl;
+
+	cout << "\nrt4:\t"; rt4.Dump();
+	cout << "Perimeter:\t" << rt4.GetPerimeter() << endl;
+
+	cout << endl;
+
+	// Test GetArea
+	cout << "TEST:\t" << " -------------------- ";
+	cout << "GetArea" << " -------------------- " << endl;
+	cout << "NB: function of parent class polygon" << endl;
+
+	cout << "\nrt:\t"; rt.Dump();
+	cout << "Area:\t" << rt.GetArea() << endl;
+
+	cout << "\nrt2:\t"; rt2.Dump();
+	cout << "Area:\t" << rt2.GetArea() << endl;
+
+	cout << "\nrt3:\t"; rt3.Dump();
+	cout << "Area:\t" << rt3.GetArea() << endl;
+
+	cout << "\nrt4:\t"; rt4.Dump();
+	cout << "Area:\t" << rt4.GetArea() << endl;
+
+	cout << endl;
+
 	// Test assignment operator
 	cout << "TEST:\t" << " -------------------- ";
 	cout << "Assignment operator" << " -------------------- " << endl;
