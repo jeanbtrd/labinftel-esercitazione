@@ -161,6 +161,7 @@ int main()
 
 	cout << endl;
 
+
 	// Test GetArea
 	cout << "TEST:\t" << " -------------------- ";
 	cout << "GetArea" << " -------------------- " << endl;
@@ -179,6 +180,24 @@ int main()
 	cout << "Area:\t" << rt4.GetArea() << endl;
 
 	cout << endl;
+
+
+	// Test Draw
+	cout << "TEST:\t" << " -------------------- ";
+	cout << "Draw" << " -------------------- " << endl;
+
+	rt.Draw();
+	cout << endl;
+
+	rt2.Draw();
+	cout << endl;
+
+	rt3.Draw();
+	cout << endl;
+
+	rt4.Draw();
+	cout << endl;
+
 
 	// Test assignment operator
 	cout << "TEST:\t" << " -------------------- ";
