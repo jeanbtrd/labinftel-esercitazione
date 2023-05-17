@@ -33,7 +33,7 @@ public:
 
 	/// @name OPERATORS
 	/// @{
-	Polygon& operator=(const Polygon &p); 
+	Polygon& operator=(const Polygon &p);
 	bool operator==(const Polygon &p);
 	/// @}
 
