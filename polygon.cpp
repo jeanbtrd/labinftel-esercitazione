@@ -107,7 +107,8 @@ void Polygon::Dump() {
 
 	cout << endl;
 
-	cout << "Polygon::Dump();" << endl;
+	cout << "Polygon::Dump" << endl;
+
 	cout << "Perimeter\t" << GetPerimeter() << endl;
 	cout << "Area\t\t" << GetArea() << endl;
 

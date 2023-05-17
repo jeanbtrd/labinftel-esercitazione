@@ -233,7 +233,8 @@ void RightTriangle::Dump()
 {
 	cout << endl;
 
-	cout << "RightTriangle::Dump();" << endl;
+	cout << "RightTriangle::Dump" << endl;
+
 	cout << "Base\t\t" << base << endl;
 	cout << "Altitude\t" << altitude << endl;
 
