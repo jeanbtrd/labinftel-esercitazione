@@ -12,23 +12,25 @@
 // Default constructor
 RightTriangle::RightTriangle()
 {
-	cout << "START:\tRightTriangle - constructor - default" << endl;
+
+	cout << "RightTriangle -- Default Constructor" << endl;
 	Init();
-	cout << "END:\tRightTriangle - constructor - default" << endl;
 
 }
 
 // Copy constructor
 RightTriangle::RightTriangle( const RightTriangle & t)
 {
-	cout << "START:\tRightTriangle - constructor - copy" << endl;
+	cout << "RightTriangle -- Copy Constructor" << endl;
+
 	Init(t);
-	cout << "END:\tRightTriangle - constructor - copy" << endl;
 }
 
 // Init constructor
 RightTriangle::RightTriangle( float b, float a )
 {
+	cout << "RightTriangle -- Init Constructor" << endl;
+
 	if (b < 0. || a < 0.)
 	{
 		ErrorMessage("Value not valid.");
@@ -43,9 +45,9 @@ RightTriangle::RightTriangle( float b, float a )
 
 RightTriangle::~RightTriangle()
 {
-	cout << "START:\tRightTriangle - destructor" << endl;
+	cout << "RightTriangle -- Destructor" << endl;
+
 	Reset();
-	cout << "END:\tRightTriangle - destructor" << endl;
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -93,26 +95,29 @@ istream & operator >> (istream &i, RightTriangle & t)
 
 void RightTriangle::Init()
 {
-	cout << "START:\tRightTriangle - Init - Default" << endl;
+	cout << "RightTriangle -- Default Init handler" << endl;
+
 	Reset();
-	cout << "END:\tRightTriangle - Init - Default" << endl;
 }
 
 /// @param &t reference to the RightTriangle to be cloned
 void RightTriangle::Init(const RightTriangle &r)
 {
-	cout << "START:\tRightTriangle - Init - copy" << endl;
+	cout << "RightTriangle -- Copy Init handler" << endl;
+
 	Reset();
+
+	// No need for a guard:
+	// All r object descriptors must have been checked when set.
 	base = r.base;
 	altitude = r.altitude;
-	cout << "END:\tRightTriangle - Init - copy" << endl;
 }
 
 void RightTriangle::Reset()
 {
-	cout << "START:\tRightTriangle - Reset" << endl;
+	cout << "RightTriangle -- Reset handler" << endl;
+
 	base = altitude = 0.;
-	cout << "END:\tRightTriangle - Reset" << endl;
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -233,7 +238,7 @@ void RightTriangle::Dump()
 {
 	cout << endl;
 
-	cout << "RightTriangle::Dump" << endl;
+	cout << "RightTriangle -- Dump" << endl;
 
 	cout << "Base\t\t" << base << endl;
 	cout << "Altitude\t" << altitude << endl;

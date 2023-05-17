@@ -3,7 +3,7 @@
 /// @brief default constructor
 Polygon::Polygon() {
 
-	cout << "Polygon - constructor - default" << endl;
+	cout << "Polygon -- Default Constructor" << endl;
 
 	area = 0.;
 	perimeter = 0.;
@@ -14,7 +14,7 @@ Polygon::Polygon() {
 /// @param r reference to the object that should be copied
 Polygon::Polygon(const Polygon &p) {
 
-	cout << "Polygon - copy constructor" << endl;
+	cout << "Polygon -- Copy Constructor" << endl;
 
 	Init(p);
 }
@@ -22,7 +22,7 @@ Polygon::Polygon(const Polygon &p) {
 /// @brief destructor
 Polygon::~Polygon() {
 
-	cout << "Polygon - destructor" << endl;
+	cout << "Polygon -- Destructor" << endl;
 	Reset();
 
 }
@@ -107,7 +107,7 @@ void Polygon::Dump() {
 
 	cout << endl;
 
-	cout << "Polygon::Dump" << endl;
+	cout << "Polygon -- Dump" << endl;
 
 	cout << "Perimeter\t" << GetPerimeter() << endl;
 	cout << "Area\t\t" << GetArea() << endl;
