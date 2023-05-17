@@ -9,6 +9,7 @@
 // Constructors - Destructor
 
 
+// Default constructor
 RightTriangle::RightTriangle()
 {
 	cout << "START:\tRightTriangle - constructor - default" << endl;
@@ -17,6 +18,7 @@ RightTriangle::RightTriangle()
 
 }
 
+// Copy constructor
 RightTriangle::RightTriangle( const RightTriangle & t)
 {
 	cout << "START:\tRightTriangle - constructor - copy" << endl;
@@ -24,9 +26,19 @@ RightTriangle::RightTriangle( const RightTriangle & t)
 	cout << "END:\tRightTriangle - constructor - copy" << endl;
 }
 
+// Init constructor
 RightTriangle::RightTriangle( float b, float a )
 {
-	SetCathetes( b , a );
+	if (b < 0. || a < 0.)
+	{
+		ErrorMessage("Value not valid.");
+		Init();
+	}
+	else
+	{
+		base = b;
+		altitude = a;
+	}
 }
 
 RightTriangle::~RightTriangle()
@@ -164,11 +176,7 @@ void RightTriangle::GetCathetes( float & b, float & a )
 /// @param The float value you want to set the base to.
 void RightTriangle::SetBase(float b)
 {
-	if (b < 0)
-	{
-		ErrorMessage(":\tSetBase:\tBase cannot be a negative float.");
-		return;
-	}
+	if (b < 0) { ErrorMessage("Value not valid."); return; }
 	base = b;
 }
 
@@ -176,21 +184,16 @@ void RightTriangle::SetBase(float b)
 /// @param The float value you want to set the altitude to.
 void RightTriangle::SetAltitude(float a)
 {
-	if (a < 0)
-	{
-		ErrorMessage("SetAltitude:\tAltitude cannot be a negative float.");
-		return;
-	}
+	if (a < 0) { ErrorMessage("Value not valid."); return; }
 	altitude = a;
 }
 
 /// @brief Lets you set both base and altitude of the right triangle
 /// @param b float to set the base to
 /// @param a float to set the altitude to
-/// This function calls SetBase and SetAltitude instead than setting them herself.\n
-/// This way, the guards can all be in those functions.
 void RightTriangle::SetCathetes(float b, float a)
 {
+	if (b < 0 || a < 0) { ErrorMessage("Value not valid."); return; }
 	SetBase(b);
 	SetAltitude(a);
 }
