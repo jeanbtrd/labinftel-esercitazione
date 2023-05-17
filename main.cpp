@@ -5,7 +5,6 @@
 
 #include <iostream>
 
-//#include "polygon.h"
 #include "RightTriangle.h"
 
 using namespace std;
@@ -28,14 +27,17 @@ int main()
 	cout << "SetBase" << " -------------------- " << endl;
 	cout << "Give it a negative value, get an error:" << endl;
 	rt.SetBase( -30. );
-	cout << "Give it a positive value, all good." << endl;
+	cout << "\nGive it a positive value, all good:" << endl;
 	rt.SetBase( 2147.435432 );
 	rt.Dump();
 	cout << endl;
 
 	cout << "TEST:\t" << " -------------------- ";
 	cout << "SetAltitude" << " -------------------- " << endl;
+	cout << "Give it a negative value, get an error:" << endl;
 	rt.SetAltitude( -3390.33333 );
+	cout << "\nGive it a positive value, all good:" << endl;
+	rt.SetAltitude( 3390.33333 );
 	rt.Dump();
 	cout << endl;
 
@@ -66,6 +68,7 @@ int main()
 	RightTriangle rt2(rt);
 	rt2.Dump();
 
+	cout << endl;
 
 	// Test comparison operator: should return true
 	cout << "TEST:\t" << " -------------------- ";
@@ -75,11 +78,14 @@ int main()
 	if ( rt == rt2 ) cout << "true:\tThey're the same." << endl;
 	else cout << "false:\tThey're different." << endl;
 
+	cout << endl;
+
 	// Test SetCathetes
 	cout << "TEST:\t" << " -------------------- ";
 	cout << "SetCathetes" << " -------------------- " << endl;
 
-	rt2.SetCathetes( 35, 41 );
+	rt2.SetCathetes( -35.55, 41.34 );
+	rt2.Dump();
 
 	// Test comparison operator: should return false
 	cout << "TEST:\t" << " -------------------- ";
@@ -88,6 +94,19 @@ int main()
 
 	if ( rt == rt2 ) cout << "true:\tThey're the same." << endl;
 	else cout << "false:\tThey're different." << endl;
+
+
+	// Test Init constructor
+	cout << "TEST:\t" << " -------------------- ";
+	cout << "Init constructor" << " -------------------- " << endl;
+
+	cout << "Bad value (negative):" << endl;
+	RightTriangle rt3( -78. , 5.54 );
+	rt3.Dump();
+
+	cout << "Good value:" << endl;
+	RightTriangle rt4( 78. , 5.54 );
+	rt4.Dump();
 
     return 0;
 }
