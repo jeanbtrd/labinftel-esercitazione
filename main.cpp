@@ -108,5 +108,16 @@ int main()
 	RightTriangle rt4( 78. , 5.54 );
 	rt4.Dump();
 
+
+	// Test assignment operator
+	cout << "TEST:\t" << " -------------------- ";
+	cout << "Assignment operator" << " -------------------- " << endl;
+	rt = rt2 = rt3 = rt4;
+	rt.Dump();
+	rt2.Dump();
+	rt3.Dump();
+	rt4.Dump();
+
+
     return 0;
 }
