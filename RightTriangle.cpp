@@ -217,7 +217,7 @@ void RightTriangle::Draw()
 void RightTriangle::ErrorMessage( const char *string )
 {
 	cout << endl << "ERROR -- RightTriangle --\t";
-	cout << string << endl;
+	cout << string << endl << endl;
 }
 
 /// @brief Write a warning message.
@@ -225,7 +225,7 @@ void RightTriangle::ErrorMessage( const char *string )
 void RightTriangle::WarningMessage(const char *string)
 {
 	cout << endl << "WARNING -- RightTriangle --\t";
-	cout << string << endl;
+	cout << string << endl << endl;
 }
 
 /// @brief For debugging: print all about the RightTriangle.

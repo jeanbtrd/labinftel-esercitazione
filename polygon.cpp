@@ -88,7 +88,7 @@ float Polygon::GetPerimeter() {
 void Polygon::ErrorMessage(const char *string) {
 
 	cout << endl << "ERROR -- Polygon --";
-	cout << string << endl;
+	cout << string << endl << endl;
 
 }
 
@@ -97,7 +97,7 @@ void Polygon::ErrorMessage(const char *string) {
 void Polygon::WarningMessage(const char *string) {
 
 	cout << endl << "WARNING -- Polygon --";
-	cout << string << endl;
+	cout << string << endl << endl;
 
 }
 
