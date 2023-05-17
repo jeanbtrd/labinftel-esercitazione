@@ -106,8 +106,14 @@ void Polygon::WarningMessage(const char *string) {
 void Polygon::Dump() {
 
 	cout << endl;
+	cout << "START:\tPolygon -- Dump" << endl;
+	cout << endl;
+
 	cout << "Perimeter = " << GetPerimeter() << endl;
 	cout << "Area = " << GetArea() << endl;
+
+	cout << endl;
+	cout << "END:\tPolygon -- Dump" << endl << endl;
 	cout << endl << flush;
 
 }
