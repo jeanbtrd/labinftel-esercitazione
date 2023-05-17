@@ -232,14 +232,12 @@ void RightTriangle::WarningMessage(const char *string)
 void RightTriangle::Dump()
 {
 	cout << endl;
-	cout << "START:\tRightTriangle -- Dump" << endl;
-	cout << endl;
 
-	cout << "Base: " << base << endl;
-	cout << "Altitude: " << altitude << endl;
+	cout << "RightTriangle::Dump();" << endl;
+	cout << "Base\t\t" << base << endl;
+	cout << "Altitude\t" << altitude << endl;
 
 	Polygon::Dump();
 
-	cout << "END:\tRightTriangle -- Dump" << endl;
 	cout << endl << flush;
 }
