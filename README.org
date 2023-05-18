@@ -1,0 +1,54 @@
+#+title: Readme
+:properties:
+:header-args: :noeval
+:end:
+
+
+* Dealing polygons
+** Quickstart
+Clone the repository
+#+begin_src shell :noeval
+git clone https://github.com/jeanbtrd/labinftel-esercitazione.git
+#+end_src
+
+Compile it
+#+begin_src shell :noeval
+g++ *.cpp -o labinftel-esercitazione
+#+end_src
+
+Run it
+#+begin_src shell :noeval
+./labinftel-esercitazione
+#+end_src
+** How to use it
+Upon running the executable, you will be prompted for an action.
+
+As of =Thu May 18 2023= there are 5 choices:
+
+1. Rectangle
+   Press =1= to create a rectangle.
+   You will then be prompted for its parameters:
+   - Width
+   - Length
+2. Rhombus
+   Press =2= to create a rhombus.
+   You will then be prompted for its parameters:
+   - Horizontal diagonal
+   - Vertical diagonal
+3. RightTriangle
+   Press =3= to create a rhombus.
+   You will then be prompted for its parameters:
+   - Base
+   - Altitude
+4. Draw
+   Press =4= to draw the currently existing polygons.
+   Example output:
+  #+begin_src example
+Rectangle -- Draw
+Lenght:		14.2
+Width:		12.3
+Area:		174.66
+Perimeter:	53
+  #+end_src
+5. Exit
+   Press =5= to end the program.
