@@ -1,3 +1,5 @@
+#+title: Readme
+
 
 * Dealing polygons
 ** Quickstart
@@ -15,7 +17,7 @@ Run it
 #+begin_src shell :noeval
 ./labinftel-esercitazione
 #+end_src
-** How to use it
+** How to use
 Upon running the executable, you will be prompted for an action.
 
 As of =Thu May 18 2023= there are 5 choices:
