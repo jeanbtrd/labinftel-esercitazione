@@ -3,3 +3,4 @@
 !*.h
 !*.hpp
 !.gitignore
+!README.org
