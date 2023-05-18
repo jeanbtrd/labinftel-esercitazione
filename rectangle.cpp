@@ -11,39 +11,41 @@
 
 Rectangle::Rectangle()
 {
-	cout << "START:\tRectangle - constructor - default" << endl;
+	cout << "Rectangle -- Default Constructor" << endl;
 	Init();
-	cout << "END:\tRectangle - constructor - default" << endl;
 
 }
 
 Rectangle::Rectangle( const Rectangle & r)
 {
-	cout << "START:\tRectangle - constructor - copy" << endl;
+	cout << "Rectangle -- Copy Constructor" << endl;
 	Init(r);
-	cout << "END:\tRectangle - constructor - copy" << endl;
 }
 
-
+// Init constructor
 Rectangle::Rectangle(float w, float l)
 {
-	cout << "START:\tRectangle - constructor - init" << endl;
+	cout << "RightTriangle -- Init Constructor" << endl;
+
 	Reset();
 
-	if (w <= 0) cout << "WARNING: Rectangle - constructor: width should be > 0" << endl;
-	else width = w;
-
-	if (l <= 0) cout << "WARNING: Rectangle - constructor: length should be > 0" << endl;
-	else length = l;
-
-	cout << "END:\tRectangle - constructor - init" << endl;
+	if (w < 0. || l < 0.)
+	{
+		ErrorMessage("Value not valid.");
+		Init();
+	}
+	else
+	{
+		width = w;
+		length = l;
+	}
 }
 
+// Destructor
 Rectangle::~Rectangle()
 {
-	cout << "START:\tRectangle - destructor" << endl;
+	cout << "Rectangle -- Destructor" << endl;
 	Reset();
-	cout << "END:\tRectangle - destructor" << endl;
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -91,30 +93,25 @@ istream & operator >> (istream &i, Rectangle & X)
 
 void Rectangle::Init()
 {
-	cout << "START:\tRectangle - Init - Default" << endl;
+	cout << "Rectangle -- Init default handler" << endl;
 	Reset();
-	cout << "END:\tRectangle - Init - Default" << endl;
 }
 
 /// @param r rectangle to be cloned
 void Rectangle::Init(const Rectangle &r)
 {
-	cout << "START:\tRectangle - Init - copy" << endl;
+	cout << "Rectangle -- Init copy handler" << endl;
 
 	Reset();
 
 	width = r.width;
 	length = r.length;
-
-	cout << "END:\tRectangle - Init - copy" << endl;
 }
 
 void Rectangle::Reset()
 {
-	cout << "START:\tRectangle - Reset" << endl;
-	width = 0;
-	length = 0;
-	cout << "END:\tRectangle - Reset" << endl;
+	cout << "Rectangle -- Reset handler" << endl;
+	width = length = 0.;
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -200,10 +197,14 @@ void Rectangle::SetDim(float w, float l)
 // Drawing
 
 /// @brief Draws the rectangle.
-/// For now it just calls the Dump.
 void Rectangle::Draw()
 {
-	Dump();
+	cout << "Rectangle -- Draw" << endl;
+
+	cout << "Lenght:\t\t" << length  << endl;
+	cout << "Width:\t\t" << width  << endl;
+	cout << "Area:\t\t" << GetArea()  << endl;
+	cout << "Perimeter:\t" << GetPerimeter()  << endl;
 }
 
 
@@ -229,6 +230,14 @@ void Rectangle::WarningMessage(const char *string)
 /// @brief For debugging: print all about the rectangle.
 void Rectangle::Dump()
 {
-	cout << "Lenght: " << length  << endl;
-	cout << "Width: " << width  << endl;
+	cout << endl;
+
+	cout << "Rectangle -- Dump" << endl;
+
+	cout << "Lenght:\t" << length  << endl;
+	cout << "Width:\t" << width  << endl;
+
+	Polygon::Dump();
+
+	cout << endl << flush;
 }

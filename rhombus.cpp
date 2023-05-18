@@ -12,23 +12,21 @@
 
 Rhombus::Rhombus()
 {
-	cout << "START:\tRhombus - constructor - default" << endl;
-	diagH = (float)0;
-	diagV = (float)0;
-	cout << "END:\tRhombus - constructor - default" << endl;
+	cout << "Rhombus -- Default Constructor" << endl;
+	Init();
 }
 
 Rhombus::Rhombus( const Rhombus & r)
 {
-	cout << "START:\tRhombus - constructor - copy" << endl;
+	cout << "Rhombus -- Copy Constructor" << endl;
 	Init(r);
-	cout << "END:\tRhombus - constructor - copy" << endl;
 }
 
 
 Rhombus::Rhombus(float dH, float dV)
 {
-	cout << "START:\tRhombus - constructor - init" << endl;
+	cout << "Rhombus -- Init Constructor" << endl;
+
 	Reset();
 
 	if (dH <= 0) cout << "WARNING: Rhombus - constructor: horizontal diagonal should be > 0" << endl;
@@ -36,16 +34,13 @@ Rhombus::Rhombus(float dH, float dV)
 
 	if (dV <= 0) cout << "WARNING: Rhombus - constructor: vertical diagonal should be > 0" << endl;
 	else diagV = dV;
-
-	cout << "END:\tRhombus - constructor - init" << endl;
 }
 
 
 Rhombus::~Rhombus()
 {
-	cout << "START:\tRhombus - Destructor" << endl;
+	cout << "Rhombus -- Destructor" << endl;
 	Reset();
-	cout << "END:\tRhombus - Destructor" << endl;
 }
 
 
@@ -94,9 +89,7 @@ istream & operator >> (istream &i, Rhombus & r)
 
 void Rhombus::Init()
 {
-	cout << "START:\tRhombus - Init - default" << endl;
 	Reset();
-	cout << "END:\tRhombus - Init - default" << endl;
 }
 
 /// @param r rhombus to be cloned
@@ -114,10 +107,8 @@ void Rhombus::Init(const Rhombus &r)
 
 void Rhombus::Reset()
 {
-	cout << "START:\tRhombus - Reset" << endl;
 	diagH = (float)0;
 	diagV = (float)0;
-	cout << "END:\tRhombus - Reset" << endl;
 }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -217,7 +208,12 @@ void Rhombus::SetDim(float dH, float dV)
 /// For now it just calls the Dump.
 void Rhombus::Draw()
 {
-	Dump();
+	cout << "Rhombus -- Draw" << endl;
+
+	cout << "Horizontal diagonal:\t" << diagH  << endl;
+	cout << "Vertical Diagonal:\t" << diagV  << endl;
+	cout << "Area:\t\t\t" << GetArea()  << endl;
+	cout << "Perimeter:\t\t" << GetPerimeter()  << endl;
 }
 
 
@@ -244,6 +240,14 @@ void Rhombus::WarningMessage(const char *string)
 /// @brief For debugging: print all about the rhombus.
 void Rhombus::Dump()
 {
-	cout << "diagH:\t" << diagH << endl;
-	cout << "diagV:\t" << diagV << endl;
+	cout << endl;
+
+	cout << "Rhombus -- Dump" << endl;
+
+	cout << "Horizontal diagonal:\t" << diagH << endl;
+	cout << "Vertical diagonal:\t" << diagV << endl;
+
+	Polygon::Dump();
+
+	cout << endl << flush;
 }

@@ -12,17 +12,14 @@
 // Default constructor
 RightTriangle::RightTriangle()
 {
-
 	cout << "RightTriangle -- Default Constructor" << endl;
 	Init();
-
 }
 
 // Copy constructor
 RightTriangle::RightTriangle( const RightTriangle & t)
 {
 	cout << "RightTriangle -- Copy Constructor" << endl;
-
 	Init(t);
 }
 
@@ -43,10 +40,10 @@ RightTriangle::RightTriangle( float b, float a )
 	}
 }
 
+// Destructor
 RightTriangle::~RightTriangle()
 {
 	cout << "RightTriangle -- Destructor" << endl;
-
 	Reset();
 }
 
@@ -211,7 +208,12 @@ void RightTriangle::SetCathetes(float b, float a)
 /// For now it just calls the Dump.
 void RightTriangle::Draw()
 {
-	Dump();
+	cout << "RightTriangle -- Draw" << endl;
+
+	cout << "Base:\t\t" << base  << endl;
+	cout << "Altitude:\t" << altitude  << endl;
+	cout << "Area:\t\t" << GetArea()  << endl;
+	cout << "Perimeter:\t" << GetPerimeter()  << endl;
 }
 
 ///////////////////////////////////////////////////////////////////////////

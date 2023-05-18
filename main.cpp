@@ -1,212 +1,182 @@
 /*!
 @file	main.cpp
-@brief	Testing RightTriangle class
+@brief	Using polygons.
 */
 
 #include <iostream>
 
+#include "rectangle.h"
+#include "rhombus.h"
 #include "RightTriangle.h"
+
+// The maximum number of polygons that can be created here.
+#define MAX_POLYGONS 100
 
 using namespace std;
 
-int main()
-{
+int main() {
 
-	// The default constructor should build a RightTriangle object.
-	RightTriangle rt;
-	cout << endl;
+	// This flag tells the program if we want to exit it.
+	bool exit = false;
 
+	// This variable is for storing user's choice about what to do next.
+	int choice = -1;
 
-	// The rt object should have the default values of 0 and 0.
-	cout << "TEST:\t" << " -------------------- ";
-	cout << "Default Constructor" << " -------------------- " << endl;
-	rt.Dump();
-	cout << endl;
+	// This array stores the polygons of this program.
+	Polygon * polygons[MAX_POLYGONS];
 
+	// Initialize all its entries to NULL
+	for ( int i = 0; i < MAX_POLYGONS; i++) polygons[i] = NULL;
 
-	// Test SetBase and SetAltitude
-	cout << "TEST:\t" << " -------------------- ";
-	cout << "SetBase" << " -------------------- " << endl;
-	cout << "Give it a negative value, get an error:" << endl;
-	rt.SetBase( -30. );
-	cout << "\nGive it a positive value, all good:" << endl;
-	rt.SetBase( 2147.435432 );
-	rt.Dump();
-	cout << endl;
-
-	cout << "TEST:\t" << " -------------------- ";
-	cout << "SetAltitude" << " -------------------- " << endl;
-	cout << "Give it a negative value, get an error:" << endl;
-	rt.SetAltitude( -3390.33333 );
-	cout << "\nGive it a positive value, all good:" << endl;
-	rt.SetAltitude( 3390.33333 );
-	rt.Dump();
-	cout << endl;
+	// Count the number of polygons in existence.
+	int polyCount = 0;
 
 
-	// Test GetBase and GetAltitude
-	cout << "TEST:\t" << " -------------------- ";
-	cout << "GetBase" << " -------------------- " << endl;
-	cout << rt.GetBase() << endl;
-	cout << endl;
-
-	cout << "TEST:\t" << " -------------------- ";
-	cout << "GetAltitude" << " -------------------- " << endl;
-	cout << rt.GetAltitude() << endl;
-	cout << endl;
+	// Welcome the user.
+	cout << "-------- Welcome --------" << endl << endl;
 
 
-	// Test GetCathetes
-	cout << "TEST:\t" << " -------------------- ";
-	cout << "GetCathetes" << " -------------------- " << endl;
-	float b,a;
-	rt.GetCathetes( b , a );
-	cout << "B: " << b << "\tA: " << a << endl;
-	cout << endl;
+	// The while loop gets exited if and only if the user decides to end the program, which turns the exit flag to true.
+	while (!exit)
+	{
+		// Prompt the user for the next action
+		cout << endl;
+		cout << "-------- What now? --------" << endl;
+		cout << "1 - Rectangle" << endl;
+		cout << "2 - Rhombus" << endl;
+		cout << "3 - RightTriangle" << endl;
+		cout << "4 - Draw" << endl;
+		cout << "5 - Exit" << endl;
+
+		// Get user choice
+		scanf("%d", &choice);
+		//cin >> choice;
 
 
-	// Test copy constructor
-	cout << "TEST:\t" << " -------------------- ";
-	cout << "Copy Constructor" << " -------------------- " << endl;
+		// Check if it is valid.
+		// If it's not valid, prompt user again until it gives a valid one.
+		while (choice < 1 || choice > 5 )
+		{
+			cout << "Choice not valid. Please enter one of the available choices:" << endl;
+		cout << "1 - Rectangle" << endl;
+		cout << "2 - Rhombus" << endl;
+		cout << "3 - RightTriangle" << endl;
+		cout << "4 - Draw" << endl;
+		cout << "5 - Exit" << endl;
 
-	RightTriangle rt2(rt);
-	rt2.Dump();
+		}
 
-	cout << endl;
+		// This switch statement does the action requested by the user.
+		switch (choice)
+		{
 
+			// 1 - Rectangle
+			case 1:
+			{
+				// Create the rectangle by default
+				Rectangle * p = new Rectangle;
 
-	// Test comparison operator: should return true
-	cout << "TEST:\t" << " -------------------- ";
-	cout << "Comparison Operator" << " -------------------- " << endl;
-	cout << "Should return:\ttrue" << endl;
+				// Prompt the user for the parameters of the rectangle
+				cout << "You have chosen to create a Rectangle, now I need its parameters:" << endl;
+				cout << "If none are given, it will be created with default values." << endl;
 
-	if ( rt == rt2 ) cout << "true:\tThey're the same." << endl;
-	else cout << "false:\tThey're different." << endl;
+				// Get the parameters
+				float w, l;
+				cout << "Width:\t"; scanf("%f", &w);
+				cout << "Length:\t"; scanf("%f", &l);
 
-	cout << endl;
+				// Give these parameters to the rectangle
+				p->SetDim(w,l);
+				polygons[polyCount] = p;
 
+				// Update the polygons count.
+				polyCount++;
 
-	// Test SetCathetes
-	cout << "TEST:\t" << " -------------------- ";
-	cout << "SetCathetes" << " -------------------- " << endl;
+				break;
+			}
 
-	cout << "Bad value (negative):" << endl;
-	rt2.SetCathetes( -35.55, 41.34 );
-	rt2.Dump();
+			// 2 - Rhombus
+			case 2:
+			{
+				// Create the rectangle by default
+				Rhombus * p = new Rhombus;
 
-	cout << endl;
-	cout << "Good value:" << endl;
-	rt2.SetCathetes( 35.55, 41.34 );
-	rt2.Dump();
-	cout << endl;
+				cout << "You have chosen to create a Rhombus, now I need its parameters:" << endl;
+				cout << "If none are given, it will be created with the default values." << endl;
 
+				// Prompt the user for the parameters of the Rhombus
+				float dh, dv;
+				cout << "Horizontal diagonal:\t"; scanf("%f", &dh);
+				cout << "Vertical diagonal:\t"; scanf("%f", &dv);
 
-	// Test comparison operator: should return false
-	cout << "TEST:\t" << " -------------------- ";
-	cout << "Comparison Operator" << " -------------------- " << endl;
-	cout << "Should return:\tfalse" << endl;
+				// Give these parameters to the Rhombus
+				p->SetDim(dh,dv);
+				polygons[polyCount] = p;
 
-	if ( rt == rt2 ) cout << "true:\tThey're the same." << endl;
-	else cout << "false:\tThey're different." << endl;
+				// Update the polygons count
+				polyCount++;
 
+				break;
+			}
 
-	// Test Init constructor
-	cout << "TEST:\t" << " -------------------- ";
-	cout << "Init constructor" << " -------------------- " << endl;
+			// 3 - RightTriangle
+			case 3:
+			{
+				// Create the rectangle by default
+				RightTriangle * p = new RightTriangle;
 
-	cout << "Bad value (negative):" << endl;
-	RightTriangle rt3( -78. , -57.54 );
-	rt3.Dump();
+				cout << "You have chosen to create a Right Triangle, now I need its parameters:" << endl;
+				cout << "If none are given, it will be created with the default values." << endl;
 
-	cout << "Good value:" << endl;
-	RightTriangle rt4( 78. , 57.54 );
-	rt4.Dump();
+				// Prompt the user for the parameters of the RightTriangle
+				float b, a;
+				cout << "Base:\t\t"; scanf("%f", &b);
+				cout << "Altitude:\t"; scanf("%f", &a);
 
+				// Give these parameters to the RightTriangle
+				p->SetCathetes(b,a);
+				polygons[polyCount] = p;
 
-	// Test GetHypotenuse
-	cout << "TEST:\t" << " -------------------- ";
-	cout << "GetHypotenuse" << " -------------------- " << endl;
+				// Update the polygons count.
+				polyCount++;
 
-	cout << "\nrt:\t"; rt.Dump();
-	cout << "Hypotenuse:\t" << rt.GetHypotenuse() << endl;
+				break;
+			}
 
-	cout << "\nrt2:\t"; rt2.Dump();
-	cout << "Hypotenuse:\t" << rt2.GetHypotenuse() << endl;
+			// 4 - Draw
+			case 4:
+			{
+				// Tell the user what is about to happen
+				cout << "Drawing all polygons:" << endl;
 
-	cout << "\nrt3:\t"; rt3.Dump();
-	cout << "Hypotenuse:\t" << rt3.GetHypotenuse() << endl;
+				// Cycle through the polygons array, drawing each one.
+				for (int i = 0; i < polyCount; i++)
+				{
+					cout << endl;
+					polygons[i]->Draw();
+				}
 
-	cout << "\nrt4:\t"; rt4.Dump();
-	cout << "Hypotenuse:\t" << rt4.GetHypotenuse() << endl;
+				break;
+			}
 
-	cout << endl;
+			// 5 - Exit
+			case 5:
+			{
+				// Delete all polygons
+				for (int i = 0; i < polyCount; i++)
+				{
+					delete polygons[i];
+				}
 
+				// Set the exit flag to true
+				exit = true;
 
-	// Test GetPerimeter
-	cout << "TEST:\t" << " -------------------- ";
-	cout << "GetPerimeter" << " -------------------- " << endl;
-	cout << "NB: function of parent class polygon" << endl;
-
-	cout << "\nrt:\t"; rt.Dump();
-	cout << "Perimeter:\t" << rt.GetPerimeter() << endl;
-
-	cout << "\nrt2:\t"; rt2.Dump();
-	cout << "Perimeter:\t" << rt2.GetPerimeter() << endl;
-
-	cout << "\nrt3:\t"; rt3.Dump();
-	cout << "Perimeter:\t" << rt3.GetPerimeter() << endl;
-
-	cout << "\nrt4:\t"; rt4.Dump();
-	cout << "Perimeter:\t" << rt4.GetPerimeter() << endl;
-
-	cout << endl;
-
-
-	// Test GetArea
-	cout << "TEST:\t" << " -------------------- ";
-	cout << "GetArea" << " -------------------- " << endl;
-	cout << "NB: function of parent class polygon" << endl;
-
-	cout << "\nrt:\t"; rt.Dump();
-	cout << "Area:\t" << rt.GetArea() << endl;
-
-	cout << "\nrt2:\t"; rt2.Dump();
-	cout << "Area:\t" << rt2.GetArea() << endl;
-
-	cout << "\nrt3:\t"; rt3.Dump();
-	cout << "Area:\t" << rt3.GetArea() << endl;
-
-	cout << "\nrt4:\t"; rt4.Dump();
-	cout << "Area:\t" << rt4.GetArea() << endl;
-
-	cout << endl;
-
-
-	// Test Draw
-	cout << "TEST:\t" << " -------------------- ";
-	cout << "Draw" << " -------------------- " << endl;
-
-	rt.Draw();
-	cout << endl;
-
-	rt2.Draw();
-	cout << endl;
-
-	rt3.Draw();
-	cout << endl;
-
-	rt4.Draw();
-	cout << endl;
+				break;
+			}
+		}
 
 
-	// Test assignment operator
-	cout << "TEST:\t" << " -------------------- ";
-	cout << "Assignment operator" << " -------------------- " << endl;
-	rt = rt2 = rt3 = rt4;
-	rt.Dump();
-	rt2.Dump();
-	rt3.Dump();
-	rt4.Dump();
+	}
 
 
     return 0;
