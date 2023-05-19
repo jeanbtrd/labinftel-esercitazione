@@ -177,11 +177,12 @@ int main() {
 				polygons[p] = NULL;
 
 				// Reorder the array
-				int np = p + 1;
-				while (polygons[np] != NULL)
+				while (polygons[p+1] != NULL)
 				{
-					polygons[p] = polygons[np];
-					p++; np++;
+					polygons[p] = polygons[p+1];
+					p++;
+					// Theres a polygon less now
+					polyCount--;
 				}
 				break;
 			}
