@@ -50,21 +50,7 @@ int main() {
 
 		// Get user choice
 		scanf("%d", &choice);
-		//cin >> choice;
 
-
-		// Check if it is valid.
-		// If it's not valid, prompt user again until it gives a valid one.
-		while (choice < 1 || choice > 5 )
-		{
-			cout << "Choice not valid. Please enter one of the available choices:" << endl;
-		cout << "1 - Rectangle" << endl;
-		cout << "2 - Rhombus" << endl;
-		cout << "3 - RightTriangle" << endl;
-		cout << "4 - Draw" << endl;
-		cout << "5 - Exit" << endl;
-
-		}
 
 		// This switch statement does the action requested by the user.
 		switch (choice)
@@ -172,6 +158,11 @@ int main() {
 				exit = true;
 
 				break;
+			}
+
+			default:
+			{
+			cout << "Choice not valid. Please enter one of the available choices:" << endl;
 			}
 		}
 
