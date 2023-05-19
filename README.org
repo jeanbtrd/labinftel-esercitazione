@@ -41,6 +41,7 @@ As of =Thu May 18 2023= there are 5 choices:
    Press =4= to draw the currently existing polygons.
    Example output:
   #+begin_src example
+Rectangle -- Draw
 Lenght:		14.2
 Width:		12.3
 Area:		174.66
