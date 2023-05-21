@@ -20,8 +20,6 @@ Run it
 ** How to use
 Upon running the executable, you will be prompted for an action.
 
-As of =Thu May 18 2023= there are 5 choices:
-
 1. Rectangle
    Press =1= to create a rectangle.
    You will then be prompted for its parameters:
