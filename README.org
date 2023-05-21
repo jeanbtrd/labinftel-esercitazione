@@ -1,4 +1,7 @@
 #+title: Readme
+# Local variables:
+# eval: (add-hook 'after-save-hook 'org-md-export-to-markdown t t)
+# end:
 
 
 * Dealing polygons
